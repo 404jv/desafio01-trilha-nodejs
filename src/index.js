@@ -32,6 +32,14 @@ function getTodoById(todos, todo_id) {
 app.post('/users', (request, response) => {
   const { name, username } = request.body;
 
+  const isUserAlreadyExists = users.some((user) => user.username === username);
+
+  if (isUserAlreadyExists) {
+    return response.status(400).json({
+      error: 'User already exists'
+    });
+  }
+
   const user = {
     id: uuidv4(),
     name,
