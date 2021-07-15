@@ -25,7 +25,7 @@ function checksExistsUserAccount(request, response, next) {
   next();
 }
 
-function getTodo(todos, todo_id) {
+function getTodoById(todos, todo_id) {
   return todos.find((todo) => todo.id === todo_id);
 }
 
