@@ -117,7 +117,7 @@ app.delete('/todos/:id', checksExistsUserAccount, (request, response) => {
 
   const users = user.todos.splice({ id }, 1);
 
-  return response.status(200).json(users);  
+  return response.status(204);  
 });
 
 module.exports = app;
