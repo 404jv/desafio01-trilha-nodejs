@@ -72,7 +72,7 @@ app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
   const { id: todo_id } = request.params;
   const { user } = request;
 
-  const todo = user.todos.find((todo) => todo.id === todo_id);
+  const todo = getTodo(user.todos, todo_id);
 
   if (!todo) {
     return response.status(404).json({
