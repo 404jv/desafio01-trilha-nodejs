@@ -25,6 +25,10 @@ function checksExistsUserAccount(request, response, next) {
   next();
 }
 
+function getTodo(todos, todo_id) {
+  return todos.find((todo) => todo.id === todo_id);
+}
+
 app.post('/users', (request, response) => {
   const { name, username } = request.body;
 
